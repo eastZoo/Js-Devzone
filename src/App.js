@@ -1,18 +1,22 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Detail from "./routes/Detail";
 import Home from "./routes/Home";
+import About from "./routes/About";
+import Navigation from "./components/Navigation";
+
 function App() {
   return (
     <Router>
+      <Navigation />
       <Switch>
-        <Route path="/abot-us">
-          <h1>Hello</h1>
-        </Route>
-        <Route path="/movie/:id">
+        <Route path="/movie/:id">  
           <Detail />
         </Route>
-        <Route path="/">
+        <Route path="/" exact={true}>
           <Home />
+        </Route>
+        <Route path="/about">
+          <About />
         </Route>
       </Switch>
     </Router>
