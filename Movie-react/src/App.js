@@ -3,6 +3,8 @@ import Detail from "./routes/Detail";
 import About from "./routes/About";
 import Navigation from "./components/Navigation";
 import Movie from "./routes/Movie";
+import Home from "./routes/Home";
+import Wak from "./routes/WAKTAVERSE/Wak";
 
 function App() {
   return (
@@ -17,6 +19,12 @@ function App() {
         </Route>
         <Route path="/movie">
           <Movie />
+        </Route>
+        <Route path="/Wak">
+          <Wak />
+        </Route>
+        <Route path="/">  
+          <Home />
         </Route>
       </Switch>
     </Router>
