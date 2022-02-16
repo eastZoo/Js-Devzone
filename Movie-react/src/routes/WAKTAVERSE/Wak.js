@@ -4,14 +4,35 @@ import styles from "./Wak.module.css";
 function Wak() {
 
     return (
-        <div className={styles.about__container}>
-            <div>
-                <span>Jinburger</span>
-                <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/1d981e78-e882-46f5-a3ea-77699c6c05bd-profile_image-300x300.png"/>
+        <div id="%s" class="card">
+            <div class="card__image-holder">
+                <img class="card__image" src="%s" title="%s님의 방송" />
             </div>
-            <div>
-                <span>Jururu</span>
-                <img src="https://w.namu.la/s/4caed1c5c9f2c78c855d2613d3100dae825eb265fe35caa55da66c5394e3d30d45474b0aa2696191915b0aa9c1492c8382a589e995a99c4781b6ea2a8d096686b86392fe784fa5bd1f455ef938115cf22b22a4e6fa5463c10deee490d4bc7373"/>
+            <div class="card-title">
+            <a href="#" class="toggle-info btn">
+                <span class="left"></span>
+                <span class="right"></span>
+            </a>
+            <h2>
+                %s
+                <small>%s</small>
+            </h2>
+            </div>
+            <div class="card-flap flap1">
+                <div class="card-description">
+                    <p>카테고리 : %s</p>
+                    <p>시청자 : %d 명</p>
+                    <p>업타임 : %s</p>
+                    <p>시작시간 : %s</p>
+                </div>
+            <div class="card-flap flap2">
+                <div class="card-actions">
+                <a  OnClick="openInNewTab('https://twitch.tv/%s')" class="btn">%s님 트위치 보러가기</a>
+        <br/>
+        <br/>
+        <a  OnClick="openInNewTab('%s')" class="btn">%s님 유튜브 보러가기</a>
+                    </div>
+                </div>
             </div>
         </div>
     );
