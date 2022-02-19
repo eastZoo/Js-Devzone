@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import DetailCom from "../components/DetailCom";
-import styles from "./Home.module.css";
+import styles from "../styles/Detail.module.css";
 
 function Detail() {
   const { id } = useParams();

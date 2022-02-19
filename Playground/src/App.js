@@ -4,7 +4,7 @@ import About from "./routes/About";
 import Navigation from "./components/Navigation";
 import Movie from "./routes/Movie";
 import Home from "./routes/Home";
-import Wak from "./routes/WAKTAVERSE/Wak";
+import Wak from "./routes/Wak";
 
 function App() {
   return (
