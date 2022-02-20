@@ -63,6 +63,7 @@ function WakDetail() {
                 {/* <p>{summary.length > 235 ? `${summary.slice(0, 235)}...` : summary}</p> */}
             </div>
         </div>
+        
       </>
   );
 }

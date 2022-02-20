@@ -1,0 +1,39 @@
+{
+    "data" : {
+        "idol" : [
+            {
+                "id": 1,
+                "name": "vo_ine"
+            },
+            {
+                "id": 2,
+                "name": "viichan6"
+            },
+            {
+                "id": 3,
+                "name": "cotton_123"
+            },
+            {
+                "id": 4,
+                "name": "jingburger"
+            },
+            {
+                "id": 5,
+                "name": "gosegugosegu"
+            },
+            {
+                "id": 6,
+                "name": "lilpaaaaaa"
+            },
+            {
+                "id": 7,
+                "name": "vo_ine"
+            }
+        ],
+        "fixmember" : [
+
+        ]
+    }
+
+}
+

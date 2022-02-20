@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import DetailCom from "../components/DetailCom";
+import DetailCom from "../components/_Movie/DetailCom";
 import styles from "../styles/Detail.module.css";
 
 function Detail() {
