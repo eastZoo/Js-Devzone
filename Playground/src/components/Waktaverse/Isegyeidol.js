@@ -1,10 +1,24 @@
+import { useState,useEffect } from "react";
 import PropTypes from "prop-types";
+import IdolChat from "./IdolChat";
 // import styles from "./Isegyeidol.module.css";
+import Isegyeidols from "./isegyeidol.json";
 
 function Isegyeidol({ name }) {
+    const [loading, setLoading] = useState(true);
+    const [isegyeidols, setisegyeidols] = useState([]);
+
+    const getIsegyeidols = () =>{ 
+        setisegyeidols(Isegyeidols.data.idol)
+        setLoading(false);
+    }
+
+    useEffect(() => {
+        getIsegyeidols();
+      }, []);
+
     return (
         <div>
-            <h1>WAKTAVERSE Member</h1>
             <iframe
                 src={`https://player.twitch.tv/?channel=${name}&parent=localhost&muted=true`}
                 height="360"

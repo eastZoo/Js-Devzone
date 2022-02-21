@@ -11,7 +11,7 @@
             },
             {
                 "id": 3,
-                "name": "cotton_123"
+                "name": "Cotton__123"
             },
             {
                 "id": 4,
@@ -24,14 +24,11 @@
             {
                 "id": 6,
                 "name": "lilpaaaaaa"
-            },
-            {
-                "id": 7,
-                "name": "vo_ine"
             }
+        
         ],
         "fixmember" : [
-
+            
         ]
     }
 
