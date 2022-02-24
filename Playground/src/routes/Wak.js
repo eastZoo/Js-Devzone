@@ -21,7 +21,7 @@ function Wak() {
       }, []);
     return (
         <div className={styles.twitch__container}>
-            <img src={wakTitle}/>
+            <img src={wakTitle} style={{ width: "100%" }}/>
             {loading ? (
                 <div className={styles.loader}>
                     <span>Loading...</span>
