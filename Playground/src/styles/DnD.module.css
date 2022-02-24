@@ -1,0 +1,21 @@
+.DnD {
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.Picture {
+    margin: 10px;
+}
+
+img {
+    margin:5px;
+}
+
+.Board {
+    width: 400px;
+    height: 500px;
+    border: 2px solid black;
+    margin-left: 40%;
+    
+}
