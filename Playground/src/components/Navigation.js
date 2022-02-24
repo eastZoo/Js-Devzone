@@ -8,6 +8,7 @@ function Navigation() {
             <Link to={`/`}>Home</Link>
             <Link to={'/movie'}>Movie</Link>
             <Link to={'/Wak'}>Wak</Link>
+            <Link to={'/DnD'}>DnD</Link>
             <Link to={`/about`}>About</Link>
             
         </div>

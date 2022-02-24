@@ -5,6 +5,7 @@ import Navigation from "./components/Navigation";
 import Movie from "./routes/Movie";
 import Home from "./routes/Home";
 import Wak from "./routes/Wak";
+import DnD from "./routes/DnD";
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
         </Route>
         <Route path="/Wak">
           <Wak />
+        </Route>
+        <Route path="/DnD">
+          <DnD />
         </Route>
         <Route path="/">  
           <Home />
