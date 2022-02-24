@@ -23,7 +23,7 @@ function DragDrop() {
     const [board, setBoard] = useState([]);
 
     const [{ isOver }, drop] = useDrop(() => ({
-        accept: "imgae",
+        accept: "image",
         drop: (item) => addImageToBoard(item.id),
         collect: (monitor) => ({
             isOver: !!monitor.isOver(),
@@ -31,8 +31,9 @@ function DragDrop() {
     }));
 
     const addImageToBoard = (id) => {
-        console.log(id);
-    }
+        const pictureList = PictureList.filter((picture) => id === picture.id);
+        setBoard((board) => [...board, pictureList[0]]);
+    };
     return (
         <>
             <div className={styles.Picture}> 
