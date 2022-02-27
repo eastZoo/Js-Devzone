@@ -33,6 +33,7 @@ function DragDrop() {
     const addImageToBoard = (id) => {
         const pictureList = PictureList.filter((picture) => id === picture.id);
         setBoard((board) => [...board, pictureList[0]]);
+        // setBoard([pictureList[0]]);
     };
     return (
         <>

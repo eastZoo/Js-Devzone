@@ -6,6 +6,9 @@ import Movie from "./routes/Movie";
 import Home from "./routes/Home";
 import Wak from "./routes/Wak";
 import DnD from "./routes/DnD";
+import Drag from "./routes/Drag";
+import Login from "./routes/Login";
+import OAuth2RedirectHandler from "./routes/OAuth2RedirectHandeler";
 
 function App() {
   return (
@@ -26,6 +29,15 @@ function App() {
         </Route>
         <Route path="/DnD">
           <DnD />
+        </Route>
+        <Route path="/Drag">
+          <Drag />
+        </Route>
+        <Route path="/Login">
+          <Login />
+        </Route>
+        <Route path="/Live/callback/twitch">
+          <OAuth2RedirectHandler />
         </Route>
         <Route path="/">  
           <Home />

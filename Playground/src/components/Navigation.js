@@ -9,6 +9,8 @@ function Navigation() {
             <Link to={'/movie'}>Movie</Link>
             <Link to={'/Wak'}>Wak</Link>
             <Link to={'/DnD'}>DnD</Link>
+            <Link to={'/Drag'}>Drag</Link>
+            <Link to={'/Login'}>Login</Link>
             <Link to={`/about`}>About</Link>
             
         </div>
