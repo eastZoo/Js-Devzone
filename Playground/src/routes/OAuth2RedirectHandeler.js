@@ -2,7 +2,6 @@
 // OAuth2RedirectHandeler.js
 
 import React from "react";
-import { useDispatch } from "react-redux";
 import { actionCreators as userActions } from "../redux/modules/user";
 import Spinner from "./Spinner";
 
