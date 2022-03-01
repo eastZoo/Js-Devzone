@@ -21,8 +21,8 @@ function Login() {
         console.log("jsonResponseBodyItem from App", jsonResponseBodyItem.pm25)
         */
         console.log(response);
-        const {chatter_count, chatter} = response.data
-        setChatter({chatter_count, chatter});
+        const {count, chatter} = response.data
+        setChatter({count, chatter});
       }
       fetchChatterData()
   }, [])
@@ -31,7 +31,7 @@ function Login() {
           <a href={KAKAO_AUTH_URL}>login</a>
           <Link to={`/Login/callback/twitch`}></Link>
           <div>
-            시청자수 : {chatter.chatter_count}
+            시청자수 : {chatter.count}
           </div>
       </div>
   )

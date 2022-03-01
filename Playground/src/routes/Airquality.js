@@ -16,6 +16,7 @@ function Airquality ()  {
         response.data가 어떤 구조로 되어 있는 지를 보기 위해 console 사용.
         console.log("jsonResponseBodyItem from App", jsonResponseBodyItem.pm25)
         */
+        console.log(response)
         const {location, time, pm10, pm25, no2} = response.data
         setAirData({location, time, pm10, pm25, no2})
       }
