@@ -8,6 +8,7 @@ import Wak from "./routes/Wak";
 import DnD from "./routes/DnD";
 import Drag from "./routes/Drag";
 import Login from "./routes/Login";
+import Airquality from "./routes/Airquality";
 import OAuth2RedirectHandler from "./routes/OAuth2RedirectHandeler";
 
 function App() {
@@ -36,9 +37,12 @@ function App() {
         <Route path="/Login">
           <Login />
         </Route>
-        <Route path="/Live/callback/twitch">
-          <OAuth2RedirectHandler />
+        <Route path="/Airquality">
+          <Airquality />
         </Route>
+        {/* <Route path="/Live/callback/twitch">
+          <OAuth2RedirectHandler />
+        </Route> */}
         <Route path="/">  
           <Home />
         </Route>

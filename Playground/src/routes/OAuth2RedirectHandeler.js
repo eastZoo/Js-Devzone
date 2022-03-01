@@ -1,21 +1,19 @@
-// 리다이렉트될 화면
-// OAuth2RedirectHandeler.js
+// // 리다이렉트될 화면
+// // OAuth2RedirectHandeler.js
+// import React from "react";
 
-import React from "react";
-import { actionCreators as userActions } from "../redux/modules/user";
-import Spinner from "./Spinner";
 
-const OAuth2RedirectHandler = (props) => {
-  const dispatch = useDispatch();
+// const OAuth2RedirectHandler = (props) => {
+//   const dispatch = useDispatch();
 
-  // 인가코드
-  let code = new URL(window.location.href).searchParams.get("code");
+//   // 인가코드
+//   let code = new URL(window.location.href).searchParams.get("code");
 
-  React.useEffect(async () => {
-    await dispatch(userActions.kakaoLogin(code));
-  }, []);
+//   React.useEffect(async () => {
+//     await dispatch(userActions.kakaoLogin(code));
+//   }, []);
 
-  return <Spinner />;
-};
+//   return <Spinner />;
+// };
 
-export default OAuth2RedirectHandler;
+// export default OAuth2RedirectHandler;

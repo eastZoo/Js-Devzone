@@ -11,6 +11,7 @@ function Navigation() {
             <Link to={'/DnD'}>DnD</Link>
             <Link to={'/Drag'}>Drag</Link>
             <Link to={'/Login'}>Login</Link>
+            <Link to={'/Airquality'}>Airquality</Link>
             <Link to={`/about`}>About</Link>
             
         </div>
