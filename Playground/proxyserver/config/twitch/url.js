@@ -1,4 +1,4 @@
 module.exports = {
-    chatterUrl: 'http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getMsrstnAcctoRltmMesureDnsty?'
+    chatterUrl: 'http://tmi.twitch.tv/group/user/ohsunny0731/chatters'
 }
 // 

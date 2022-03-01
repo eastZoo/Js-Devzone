@@ -4,7 +4,7 @@ import styles from '../styles/Airquality.module.css'
 
 function Airquality ()  {
 
-  const [airData, setAirData] = useState([])
+  const [airData, setAirData] = useState([]);
 
   useEffect(()=> {
       async function fetchAirData(){
