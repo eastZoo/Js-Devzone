@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const axdata = require('./axdata.js');
+const twitchData = require('./twitchData')
 const api = require('./config/twitch/url');
 
 app.use(cors())
@@ -16,14 +17,13 @@ app.get('/', async(req, res) => {
     });
 });
 
-app.get('/chatters', function(req, res, next){
-    request(api.chatterUrl, function(error, response, body){
-        if(error){
-            console.log(error);
+app.get('/chatters', async(req, res) => {
+    await twitchData((error,{chatter}={}) => { //twitchdata.js 의 callback안의 함수 chatter변수이름과 맞춰줘야함
+        if (error) {
+            res.send(error);
         }
-        var obj = JSON.parse(body);
-        console.log(obj.chatters.broadcaster);
-    })
+        res.send(chatter);
+    });
 });
 
 app.listen(8000, () => {
