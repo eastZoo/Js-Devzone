@@ -2,8 +2,8 @@ const axios = require('axios');
 const { useCallback } = require('react');
 const tcUrl = require('./config/twitch/url');
 
-const twitchData = async (callback) => {
-    const url = tcUrl.chatterUrl;
+const jingburgerData = async (callback) => {
+    const url = tcUrl.jingburgerUrl;
     try{
         const response = await axios.get(url);
         // response.data가 어떤 구조로 되어 있는 지를 보기 위해 console 사용.
