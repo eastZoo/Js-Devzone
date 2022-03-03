@@ -3,21 +3,31 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 
 function WakDetail() {
-    const [chatter, setChatter] = useState([]);
+    const [jingburgerChatter, setjingburgerChatter] = useState([]);
+    const [jururuChatter, setjururuChatter] = useState([]);
+    const [goseguChatter, setgoseguChatter] = useState([]);
 
     useEffect(()=> {
       async function fetchChatterData(){
         /* arrow function을 하고 싶으면..
         fetchAirData = async() => {} 으로 하면 됨. */
-        const response = await axios.get('http://localhost:8000/chatters')
+        const jingburger = await axios.get('http://localhost:8000/jingburger')
+        const jururu = await axios.get('http://localhost:8000/jururu')
+        const gosegu = await axios.get('http://localhost:8000/gosegu')
 
         /* const jsonResponseBodyItem = response.data
         response.data가 어떤 구조로 되어 있는 지를 보기 위해 console 사용.
         console.log("jsonResponseBodyItem from App", jsonResponseBodyItem.pm25)
         */
-        console.log(response);
-        const {count, chatter} = response.data
-        setChatter({count, chatter});
+        console.log(jingburger);
+
+        const {jingcount, jingchatter} = jingburger.data
+        const {jucount, juchatter} = jururu.data
+        const {gocount, gochatter} = gosegu.data
+
+        setjingburgerChatter({jingcount, jingchatter});
+        setjururuChatter({jucount, juchatter});
+        setgoseguChatter({gocount, gochatter});
       }
       fetchChatterData()
     }, [])
@@ -30,7 +40,7 @@ function WakDetail() {
                     <a href="https://www.twitch.tv/jingburger">jingburger</a>
                     </h2>
                     <h3 className={styles.movie__year}>1995.10.08</h3>
-                    <p>시청자수 : {chatter.count}</p>
+                    <p>시청자수 : {jingburgerChatter.jingcount}</p>
                 </div>
             </div>
             <div className={styles.movie}>
@@ -40,7 +50,7 @@ function WakDetail() {
                     <a href="https://www.twitch.tv/cotton__123">Jururu</a>
                     </h2>
                     <h3 className={styles.movie__year}>1997.06.10</h3>
-                    {/* <p>{summary.length > 235 ? `${summary.slice(0, 235)}...` : summary}</p> */}
+                    <p>시청자수 : {jururuChatter.jucount}</p>
                 </div>
             </div>
             <div className={styles.movie}>
@@ -50,7 +60,7 @@ function WakDetail() {
                     <a href="https://www.twitch.tv/gosegugosegu">Gosegu</a>
                     </h2>
                     <h3 className={styles.movie__year}>1998.xx.xx</h3>
-                    {/* <p>{summary.length > 235 ? `${summary.slice(0, 235)}...` : summary}</p> */}
+                    <p>시청자수 : {goseguChatter.gocount}</p>
                 </div>
             </div>
             <div className={styles.movie}>

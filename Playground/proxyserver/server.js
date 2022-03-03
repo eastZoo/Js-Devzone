@@ -5,7 +5,7 @@ const cors = require('cors');
 const axdata = require('./axdata.js');
 const twitchData = require('./twitchData')
 const api = require('./config/twitch/url');
-
+const { jingburgerData, jururuData, goseguData } = require('./twitchData');
 app.use(cors())
 
 app.get('/', async(req, res) => {
@@ -17,14 +17,33 @@ app.get('/', async(req, res) => {
     });
 });
 
-app.get('/chatters', async(req, res) => {
-    await twitchData((error,{chatter}={}) => { //twitchdata.js 의 callback안의 함수 chatter변수이름과 맞춰줘야함
+app.get('/jingburger', async(req, res) => {
+    await jingburgerData((error,{chatter}={}) => { //twitchdata.js 의 callback안의 함수 chatter변수이름과 맞춰줘야함
         if (error) {
             res.send(error);
         }
         res.send(chatter);
     });
 });
+
+app.get('/jururu', async(req, res) => {
+    await jururuData((error,{chatter}={}) => { //twitchdata.js 의 callback안의 함수 chatter변수이름과 맞춰줘야함
+        if (error) {
+            res.send(error);
+        }
+        res.send(chatter);
+    });
+});
+
+app.get('/gosegu', async(req, res) => {
+    await goseguData((error,{chatter}={}) => { //twitchdata.js 의 callback안의 함수 chatter변수이름과 맞춰줘야함
+        if (error) {
+            res.send(error);
+        }
+        res.send(chatter);
+    });
+});
+
 
 app.listen(8000, () => {
     console.log("The server is running at the port 8000");
