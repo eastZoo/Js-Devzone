@@ -1,12 +1,18 @@
-const request = require('request');
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const bodyParser = require('body-parser');
+
+const connection = require('./query/db')
 const axdata = require('./axdata.js');
 const twitchData = require('./twitchData')
 const api = require('./config/twitch/url');
 const { jingburgerData, jururuData, goseguData } = require('./twitchData');
-app.use(cors())
+
+
+app.use(cors());
+app.use(bodyParser.json());
+
 
 app.get('/', async(req, res) => {
     await axdata('성동구', (error, {airquality}={}) => {
@@ -44,17 +50,28 @@ app.get('/gosegu', async(req, res) => {
     });
 });
 
+
 app.get('/todos', (req, res) => {
-    res.send('list of all todo');
+    // res.send('list of all todo');
+    const TODO_QUERY = "select * from todolist.todos";
+    connection.query(TODO_QUERY, (err, response) => {
+        if(err) console.log(err)
+        else res.send(response)
+    });
 });
 
 app.post('/addTodo', (req, res) => {
+    // console.log(req.body);
+    const ADD_QUERY = `insert into todolist.todos (todo) values ('${req.body.toDo}')`;
+    connection.query(ADD_QUERY, (err) => {
+        if(err) console.log(err)
+        else res.send('you can add todo')
+    });
     
-    res.send('you can add todo');
 });
 
-app.get('/deleteTodo', (req, res) => {
-    res.send('deleted Todo');
+app.delete('/deleteTodo/:todoid', (req, res) => {
+    console.log(req.params.todoid);
 });
 
 app.listen(8000, () => {
