@@ -44,6 +44,18 @@ app.get('/gosegu', async(req, res) => {
     });
 });
 
+app.get('/todos', (req, res) => {
+    res.send('list of all todo');
+});
+
+app.post('/addTodo', (req, res) => {
+    
+    res.send('you can add todo');
+});
+
+app.get('/deleteTodo', (req, res) => {
+    res.send('deleted Todo');
+});
 
 app.listen(8000, () => {
     console.log("The server is running at the port 8000");
