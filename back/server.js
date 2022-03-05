@@ -52,8 +52,8 @@ app.get('/gosegu', async(req, res) => {
 
 
 app.get('/todos', (req, res) => {
-    // res.send('list of all todo');
-    const TODO_QUERY = "select * from todolist.todos";
+    // res.send('list of all to do');
+    const TODO_QUERY = "select * from todolist.todos" ;
     connection.query(TODO_QUERY, (err, response) => {
         if(err) console.log(err)
         else res.send(response)
