@@ -12,7 +12,7 @@ const { jingburgerData, jururuData, goseguData } = require('./twitchData');
 
 app.use(cors());
 app.use(bodyParser.json());
-
+ 
 
 app.get('/', async(req, res) => {
     await axdata('성동구', (error, {airquality}={}) => {

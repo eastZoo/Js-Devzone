@@ -1,7 +1,7 @@
 import { useState,useEffect } from "react";
 
 import WakDetail from "../components/Waktaverse/WakDetail"
-// import ISEGYEIDOL from "../components/Waktaverse/Isegyeidol"
+import ISEGYEIDOL from "../components/Waktaverse/Isegyeidol"
 import Isegyeidols from "../components/Waktaverse/isegyeidol.json";
 
 import styles from "../styles/Wak.module.css";
@@ -29,11 +29,11 @@ function Wak() {
             ) : (
                 <>
                     <div className={styles.twitch_lives}>
-                        {/* {isegyeidols.map((isegyeidol) => (
+                        {isegyeidols.map((isegyeidol) => (
                             <ISEGYEIDOL
                                 key={isegyeidol.id}
                                 name={isegyeidol.name} />
-                        ))} */}
+                        ))}
                         <div className={styles.wak__detail}>
                             <WakDetail />
                         </div>
