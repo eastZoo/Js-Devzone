@@ -2,3 +2,13 @@
     font-family: sans-serif;
     text-align: center;
 }
+
+.task__detail {
+    display: flex;
+    grid-template-columns: repeat(4, minmax(400px, 1fr));
+    grid-gap: 100px;
+    padding: 30px;
+    width: 100%;
+    padding-top: 10px;
+    margin-left: 10%;
+  }

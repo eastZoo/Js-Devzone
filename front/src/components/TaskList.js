@@ -8,7 +8,7 @@ function TaskList(){
     
     const onChange = (e) => setToDo(e.target.value);
 
-    const getTaskList = () =>{
+    const getTaskList = () =>{  // 이건맞아 일단
         axios.get('http://localhost:8000/todos')
         .then((response) => response.data)
         .then(response => setToDoList(response)); 
@@ -17,6 +17,7 @@ function TaskList(){
     const onDeleteClick = (todoid) => {
         // console.log('inside delete');
         axios.delete(`http://localhost:8000/deleteTodo/${todoid}`);
+        getTaskList();
     };
 
     const onSubmitClick = () => {
@@ -28,7 +29,7 @@ function TaskList(){
 
     useEffect(() => {
         getTaskList();
-      });
+      },[]);
 
     return(
         <div className={styles.title}>
@@ -38,24 +39,27 @@ function TaskList(){
             </div>
             <button className="ui primary button basic" onClick={onSubmitClick} >확인</button>
             <hr/>
-            <div className="ui cards">
-                {
-                    toDoList.map((todos) => (
-                        <div className="card">
-                            <div className="content">
-                                <div className="meta">{todos.todo}</div>
-                                <div class="extra content">
-                                    <div class="ui two buttons">
-                                        <div class="ui basic green button">Done</div>
-                                        <div class="ui basic red button" onClick={onDeleteClick(todos.todoid)}>Delete</div>
+            <div className={styles.task__detail}>
+                <div className="ui cards">
+                    {
+                        toDoList.map((todos, index) => (
+                            <div className="card">
+                                <div className="content">
+                                    <div className="meta" key={index}>{todos.todo}</div>
+                                    <div class="extra content">
+                                        <div class="ui two buttons">
+                                            <div class="ui basic green button">Done</div>
+                                            <div class="ui basic red button" onClick={() => onDeleteClick(todos.todoid)}>Delete</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    ))
-                }
-                
+                        ))
+                    }
+                    
+                </div>
             </div>
+            
         </div>
         
     )

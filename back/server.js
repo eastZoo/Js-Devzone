@@ -53,7 +53,7 @@ app.get('/gosegu', async(req, res) => {
 
 app.get('/todos', (req, res) => {
     // res.send('list of all to do');
-    const TODO_QUERY = "select * from todolist.todos" ;
+    const TODO_QUERY = `SELECT * FROM todolist.todos`;
     connection.query(TODO_QUERY, (err, response) => {
         if(err) console.log(err)
         else res.send(response)
@@ -71,7 +71,11 @@ app.post('/addTodo', (req, res) => {
 });
 
 app.delete('/deleteTodo/:todoid', (req, res) => {
-    console.log(req.params.todoid);
+    const DELETE_QUERY = `DELETE FROM todolist.todos where (todoid=${req.params.todoid})`;
+    connection.query(DELETE_QUERY, (err, res) => {
+        if(err) console.log(err)
+        // else res.send('todo has been deleted')
+    });
 });
 
 app.listen(8000, () => {
